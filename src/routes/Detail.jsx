@@ -24,7 +24,7 @@ const Detail = () => {
     return (
         <>
             <Navbar />
-            <div className={`w-full pt-24 h-screen pb-12 px-8 ${isDarkMode ? "bg-very-dark-blue" : "bg-very-light-gray"}`}>
+            <div className={`w-full pt-24 pb-12 px-8 ${isDarkMode ? "bg-very-dark-blue" : "bg-very-light-gray"}`}>
                 <button className={`flex items-center px-5 py-2 gap-2 rounded-md shadow ${isDarkMode ? "bg-dark-blue text-white" : "bg-white"}`} onClick={() => navigate(-1)}>
                     <ArrowLeftIcon className="w-5 h-5" />
                     <span>Back</span>

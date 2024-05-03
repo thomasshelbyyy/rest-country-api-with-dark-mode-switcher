@@ -11,12 +11,11 @@ const Home = () => {
 
     const { countries, setSearchTerm } = useContext(CountryContext)
 
-    console.log({ countries })
 
     return (
         <>
             <Navbar />
-            <div className={`w-full pt-24 h-screen pb-12 px-8 ${isDarkMode ? "bg-very-dark-blue" : "bg-very-light-gray"}`}>
+            <div className={`w-full pt-24 pb-12 px-8 ${isDarkMode ? "bg-very-dark-blue" : "bg-very-light-gray"}`}>
                 <div className="flex flex-col md:flex-row md:justify-between gap-8">
                     <div className={`flex gap-4 px-6 py-3  rounded-md shadow w-full md:w-80 ${isDarkMode ? "bg-dark-blue" : "bg-white"}`}>
                         <MagnifyingGlassIcon className={`w-6 h-6 ${isDarkMode ? "text-white" : "text-black"}`} />
