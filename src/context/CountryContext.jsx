@@ -30,18 +30,16 @@ const CountryContextProvider = (props) => {
         filterAndSearchCountries()
     }, [searchTerm, filter])
 
-    const shuffleArray = array => {
-        let currentIndex = array.length, randomIndex
-
-        while (currentIndex !== 0) {
-            randomIndex = Math.floor(Math.random() * currentIndex)
-            currentIndex--
-
-            [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]]
+    const shuffleArray = (array) => {
+        const newArray = [...array]; // Salin array untuk menghindari modifikasi array asli
+        for (let i = newArray.length - 1; i > 0; i--) {
+            // Generate indeks acak dari 0 ke i
+            const randomIndex = Math.floor(Math.random() * (i + 1));
+            // Tukar elemen di indeks i dengan elemen di indeks acak
+            [newArray[i], newArray[randomIndex]] = [newArray[randomIndex], newArray[i]];
         }
-
-        return array
-    }
+        return newArray;
+    };
 
     return (
         <CountryContext.Provider value={{ countries, setSearchTerm, setFilter, filter }}>

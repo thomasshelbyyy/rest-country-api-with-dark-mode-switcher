@@ -11,6 +11,8 @@ const Home = () => {
 
     const { countries, setSearchTerm } = useContext(CountryContext)
 
+    console.log({ countries })
+
     return (
         <>
             <Navbar />
