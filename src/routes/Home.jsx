@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar"
 import { useDarkMode } from "../context/DarkModeContext"
 import Dropdown from "../components/Dropdown"
 import Card from "../components/Card"
-import { useContext, useEffect } from "react"
+import { useContext } from "react"
 import { CountryContext } from "../context/CountryContext"
 
 const Home = () => {
@@ -11,9 +11,6 @@ const Home = () => {
 
     const { countries, setSearchTerm } = useContext(CountryContext)
 
-    useEffect(() => {
-        console.log(countries)
-    }, [])
     return (
         <>
             <Navbar />
@@ -28,7 +25,7 @@ const Home = () => {
                 </div>
 
                 <div className="w-full flex justify-center md:justify-start gap-8 flex-wrap pt-12">
-                    {countries.map(country => (
+                    {countries.length > 0 && countries.map(country => (
                         <Card key={country.name} name={country.name} capital={country.capital} flagUrl={country.flags.png} population={country.population} region={country.region} />
                     ))}
                 </div>

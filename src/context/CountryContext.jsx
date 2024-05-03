@@ -4,7 +4,7 @@ import countriesJSON from "../assets/data.json"
 export const CountryContext = createContext()
 
 const CountryContextProvider = (props) => {
-    const [countries, setCountries] = useState(countriesJSON)
+    const [countries, setCountries] = useState([])
     const [searchTerm, setSearchTerm] = useState("")
     const [filter, setFilter] = useState("")
 
